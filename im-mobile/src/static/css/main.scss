@@ -1,0 +1,338 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+// Base styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $text-color;
+  background: $bg-color;
+}
+
+// Global styles
+page {
+  height: 100%;
+  background: $bg-color;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+}
+
+h1 { font-size: $font-size-xl; }
+h2 { font-size: 34rpx; }
+h3 { font-size: $font-size-lg; }
+h4 { font-size: 30rpx; }
+h5 { font-size: $font-size-base; }
+h6 { font-size: $font-size-sm; }
+
+p {
+  margin-bottom: $spacing-sm;
+  line-height: 1.6;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+// Buttons
+button {
+  background: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius-sm;
+  padding: 12rpx 24rpx;
+  font-size: $font-size-base;
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    background: $primary-dark;
+  }
+
+  &:disabled {
+    background: $bg-darker;
+    cursor: not-allowed;
+  }
+
+  &.secondary {
+    background: $bg-light;
+    color: $text-color;
+    border: 1px solid $border-color;
+
+    &:hover {
+      background: $bg-dark;
+    }
+  }
+
+  &.danger {
+    background: $danger-color;
+
+    &:hover {
+      background: darken($danger-color, 10%);
+    }
+  }
+
+  &.small {
+    padding: 8rpx 16rpx;
+    font-size: $font-size-sm;
+  }
+
+  &.large {
+    padding: 16rpx 32rpx;
+    font-size: $font-size-lg;
+  }
+}
+
+// Inputs
+input, textarea {
+  width: 100%;
+  padding: 12rpx 16rpx;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-base;
+  @include transition;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+    box-shadow: 0 0 0 2rpx rgba($primary-color, 0.2);
+  }
+
+  &.error {
+    border-color: $danger-color;
+  }
+}
+
+// Forms
+.form-group {
+  margin-bottom: $spacing-md;
+
+  .form-label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-base;
+    color: $text-light;
+  }
+
+  .form-help {
+    font-size: $font-size-sm;
+    color: $text-lighter;
+    margin-top: $spacing-xs;
+  }
+
+  .form-error {
+    font-size: $font-size-sm;
+    color: $danger-color;
+    margin-top: $spacing-xs;
+  }
+}
+
+// Cards
+.card {
+  background: $bg-light;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-sm;
+}
+
+// Badges
+.badge {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  line-height: 1;
+
+  &.primary {
+    background: $primary-color;
+    color: white;
+  }
+
+  &.success {
+    background: $success-color;
+    color: white;
+  }
+
+  &.warning {
+    background: $warning-color;
+    color: white;
+  }
+
+  &.danger {
+    background: $danger-color;
+    color: white;
+  }
+
+  &.info {
+    background: $info-color;
+    color: white;
+  }
+}
+
+// Alerts
+.alert {
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  margin-bottom: $spacing-md;
+
+  &.success {
+    background: lighten($success-color, 40%);
+    color: $success-color;
+  }
+
+  &.warning {
+    background: lighten($warning-color, 40%);
+    color: $warning-color;
+  }
+
+  &.danger {
+    background: lighten($danger-color, 40%);
+    color: $danger-color;
+  }
+
+  &.info {
+    background: lighten($info-color, 40%);
+    color: $info-color;
+  }
+}
+
+// Loading states
+.loading {
+  @include flex-center;
+  padding: $spacing-md;
+
+  &-icon {
+    width: 40rpx;
+    height: 40rpx;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Empty states
+.empty-state {
+  @include flex-column;
+  @include flex-center;
+  padding: $spacing-xl;
+  text-align: center;
+
+  .empty-icon {
+    width: 120rpx;
+    height: 120rpx;
+    margin-bottom: $spacing-md;
+  }
+
+  .empty-text {
+    font-size: $font-size-base;
+    color: $text-lighter;
+  }
+}
+
+// Utilities
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-xs { margin-top: $spacing-xs; }
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.mb-xs { margin-bottom: $spacing-xs; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.ml-xs { margin-left: $spacing-xs; }
+.ml-sm { margin-left: $spacing-sm; }
+.ml-md { margin-left: $spacing-md; }
+.ml-lg { margin-left: $spacing-lg; }
+.ml-xl { margin-left: $spacing-xl; }
+
+.mr-xs { margin-right: $spacing-xs; }
+.mr-sm { margin-right: $spacing-sm; }
+.mr-md { margin-right: $spacing-md; }
+.mr-lg { margin-right: $spacing-lg; }
+.mr-xl { margin-right: $spacing-xl; }
+
+.p-xs { padding: $spacing-xs; }
+.p-sm { padding: $spacing-sm; }
+.p-md { padding: $spacing-md; }
+.p-lg { padding: $spacing-lg; }
+.p-xl { padding: $spacing-xl; }
+
+// Animations
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease;
+}
+
+// Scrollable areas
+.scroll-area {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+}
+
+// Mobile specific
+@media (max-width: $breakpoint-sm) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+// Dark mode support
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+.dark-mode {
+  @include dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+
+    .card {
+      background: #2a2a2a;
+    }
+
+    input, textarea {
+      background: #2a2a2a;
+      border-color: #444;
+      color: #e0e0e0;
+    }
+  }
+}

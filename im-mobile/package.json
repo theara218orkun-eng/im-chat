@@ -1,0 +1,40 @@
+{
+  "name": "im-mobile",
+  "version": "1.0.0",
+  "description": "Mobile version of Raingad IM using uniapp",
+  "main": "main.js",
+  "scripts": {
+    "dev:h5": "NODE_ENV=development uni -p h5",
+    "dev:app": "NODE_ENV=development uni -p app",
+    "build:h5": "NODE_ENV=production uni build -p h5",
+    "build:app": "NODE_ENV=production uni build -p app",
+    "build:mp-weixin": "NODE_ENV=production uni build -p mp-weixin",
+    "lint": "eslint src --ext .vue,.js"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "^2.0.0",
+    "@dcloudio/uni-h5": "^2.0.0",
+    "@dcloudio/uni-mp-weixin": "^2.0.0",
+    "@dcloudio/uni-ui": "^1.4.21",
+    "@vueuse/core": "^9.0.0",
+    "pinia": "^2.0.0",
+    "vue": "^3.2.0",
+    "vue-i18n": "^9.0.0",
+    "dayjs": "^1.11.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@vue/eslint-config-standard": "^8.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "vite": "^4.0.0"
+  },
+  "uni-app": {
+    "scripts": {}
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
