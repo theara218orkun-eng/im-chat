@@ -1,0 +1,87 @@
+{
+  "name": "Raingad-IM",
+  "version": "6.2.0",
+  "description": "一款基于vue2.0的即时聊天工具",
+  "logo": "/assets/img/logo.png",
+  "frontUrl": "https://gitee.com/raingad/im-chat-front",
+  "backstageUrl": "https://gitee.com/raingad/im-instant-chat",
+  "mobileUrl": "https://im.raingad.com/h5",
+  "author": "Raingad",
+  "license": "Apache2.0",
+  "qqGroupUrl": "https://qm.qq.com/q/RgHdvLGiMk",
+  "private": true,
+  "funcList": [
+    {
+      "icon": "el-icon-chat-line-round",
+      "text": "支持单聊和群聊，支持发送表情、图片、语音、视频和文件消息"
+    },
+    {
+      "icon": "el-icon-potato-strips",
+      "text": "单聊支持消息已读未读的状态显示，在线状态显示"
+    },
+    {
+      "icon": "el-icon-user",
+      "text": "群聊创建、删除和群成员管理、群公告、群禁言、@群成员等"
+    },
+    {
+      "icon": "el-icon-ice-cream-round",
+      "text": "支持置顶联系人，消息免打扰；支持设置新消息声音提醒，浏览器通知"
+    },
+    {
+      "icon": "el-icon-video-camera",
+      "text": "支持一对一音视频通话（已打通web端和移动端，小程序不支持）"
+    },
+    {
+      "icon": "el-icon-milk-tea",
+      "text": "支持文件、图片和绝大部分媒体文件在线预览"
+    },
+    {
+      "icon": "el-icon-mobile-phone",
+      "text": "支持移动端（由uniapp开发，可打包H5、APP和小程序），支持简易后台管理"
+    },
+    {
+      "icon": "el-icon-coffee-cup",
+      "text": "支持企业模式和社交模式，社交模式支持注册、添加好友功能"
+    }
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "core-js": "^3.8.3",
+    "cropperjs": "^1.5.13",
+    "element-ui": "^2.15.13",
+    "js-audio-recorder": "^1.0.7",
+    "js-web-screen-shot": "^1.9.8-rc.3",
+    "lockr": "^0.8.5",
+    "nprogress": "^0.2.0",
+    "v-clipboard": "^2.2.3",
+    "vue": "^2.6.14",
+    "vue-canvas-poster": "^1.2.1",
+    "vue-qr": "^4.0.9",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "rules": {
+    "generator-star-spacing": "off",
+    "no-tabs": "off",
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "no-irregular-whitespace": "off",
+    "no-debugger": "off"
+  }
+}
